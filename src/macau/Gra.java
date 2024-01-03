@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Gra {
-    private List<Karta> stos = new ArrayList<>();
-    private List<Gracz> gracze = new ArrayList<>();
+    private List<Card> stos = new ArrayList<>();
+    private List<Player> gracze = new ArrayList<>();
     private Talia talia = new Talia(stos);
     private int liczbaGraczy;
 
@@ -38,7 +38,7 @@ public class Gra {
                 wlasciwaLiczbaGraczy = false;
             }
         } while (!wlasciwaLiczbaGraczy);
-        gracze.add(new Czlowiek(0));
+        gracze.add(new Human(0));
         for (int i = 1; i < liczbaGraczy; i++) {
             gracze.add(new Komputer(i));
         }
@@ -47,18 +47,18 @@ public class Gra {
 
     public void rozdajKarty() {
         for (int i = 0; i < 5; i++) {
-            for (Gracz gracz : gracze) {
-                gracz.otrzymajKarte(talia.usunPierwszaKarteZtalii());
+            for (Player player : gracze) {
+                player.receiveCard(talia.usunPierwszaKarteZtalii());
             }
         }
     }
 
     private void przygotujPierwszaKarte() {
-        Karta odslonietaKarta = talia.usunPierwszaKarteZtalii();
+        Card odslonietaKarta = talia.usunPierwszaKarteZtalii();
         dolozKarteDoStosu(odslonietaKarta);
     }
 
-    public Gracz dajPierwszegoGracza() {
+    public Player dajPierwszegoGracza() {
         return gracze.get(0);
     }
 
@@ -67,26 +67,26 @@ public class Gra {
         System.out.println("Zaczynamy grę.");
     }
 
-    public void wyswietlKomunikatJakaKartaNaStosie(Karta kartaNaStole) {
+    public void wyswietlKomunikatJakaKartaNaStosie(Card kartaNaStole) {
         System.out.println();
         System.out.println("Twoj ruch. Karta na stole to: " + kartaNaStole);
     }
 
-    public void dolozKarteDoStosu(Karta kartaDoWylozenia) {
+    public void dolozKarteDoStosu(Card kartaDoWylozenia) {
         stos.add(kartaDoWylozenia);
     }
 
     public void uruchom() {
-        Karta odslonietaKarta = stos.get(0);
+        Card odslonietaKarta = stos.get(0);
         boolean koniecGry = false;
         while (!koniecGry) {
-            for (Gracz aktualny : gracze) {
+            for (Player aktualny : gracze) {
                 if (aktualny.equals(dajPierwszegoGracza())) {
                     wyswietlKomunikatJakaKartaNaStosie(odslonietaKarta);
                 }
-                if (!aktualny.czyMozeszZagracNa(odslonietaKarta)) {
-                    Karta otrzymana = talia.usunPierwszaKarteZtalii();
-                    aktualny.otrzymajKarte(otrzymana);
+                if (!aktualny.canYouPlayCard(odslonietaKarta)) {
+                    Card otrzymana = talia.usunPierwszaKarteZtalii();
+                    aktualny.receiveCard(otrzymana);
                     System.out.println(aktualny + " nie mogl nic zagrac, dobiera kartę. Otrzymana karta to: " + otrzymana);
                     continue;
                 }
@@ -99,22 +99,22 @@ public class Gra {
         }
     }
 
-    public Karta zareagujGdyMoznaZagrac(Gracz aktualny, Karta odslonietaKarta) {
-        Karta wybranaKarta = aktualny.wybierzKarte(odslonietaKarta);
-        aktualny.dajKarty().remove(wybranaKarta);
+    public Card zareagujGdyMoznaZagrac(Player aktualny, Card odslonietaKarta) {
+        Card wybranaKarta = aktualny.selectCardToPlay(odslonietaKarta);
+        aktualny.getCards().remove(wybranaKarta);
         stos.add(wybranaKarta);
         System.out.println(aktualny + " zagrał " + wybranaKarta);
         return wybranaKarta;
     }
 
-    private void sprawdzCzyMakao(Gracz aktualny) {
-        if (aktualny.dajIloscKart() == 1) {
+    private void sprawdzCzyMakao(Player aktualny) {
+        if (aktualny.getNumberOfCardsInHand() == 1) {
             System.out.println("Makao!");
         }
     }
 
-    private boolean sprawdzCzyKoniecGry(Gracz aktualny) {
-        if (aktualny.dajIloscKart() == 0) {
+    private boolean sprawdzCzyKoniecGry(Player aktualny) {
+        if (aktualny.getNumberOfCardsInHand() == 0) {
             System.out.println("I po makale! Koniec gry. Wygral " + aktualny);
             return true;
         }

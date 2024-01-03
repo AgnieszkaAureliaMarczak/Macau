@@ -5,31 +5,31 @@ import java.util.List;
 import java.util.Random;
 
 public class Talia {
-    private List<Karta> karty = new ArrayList<>();
-    private List<Karta> stos;
+    private List<Card> karty = new ArrayList<>();
+    private List<Card> stos;
 
-    public Talia(List<Karta> stos) {
+    public Talia(List<Card> stos) {
         this.stos = stos;
     }
 
-    public List<Karta> przygotujKarty() {
+    public List<Card> przygotujKarty() {
         potasujTalie(stworzTalieKart());
         return karty;
     }
 
-    private ArrayList<Karta> stworzTalieKart() {
-        ArrayList<Karta> talia = new ArrayList<>();
+    private ArrayList<Card> stworzTalieKart() {
+        ArrayList<Card> talia = new ArrayList<>();
         Kolor[] tablicaKolorow = Kolor.values();
         Nominal[] tablicaNominalow = Nominal.values();
         for (Kolor kolor : tablicaKolorow) {
             for (Nominal nominal : tablicaNominalow) {
-                talia.add(new Karta(kolor, nominal));
+                talia.add(new Card(kolor, nominal));
             }
         }
         return talia;
     }
 
-    private void potasujTalie(List<Karta> taliaDoTasowania) {
+    private void potasujTalie(List<Card> taliaDoTasowania) {
         Random random = new Random();
         int rozmiarTalii = taliaDoTasowania.size();
         for (int i = 0; i < rozmiarTalii; i++) {
@@ -38,7 +38,7 @@ public class Talia {
         }
     }
 
-    public Karta usunPierwszaKarteZtalii() {
+    public Card usunPierwszaKarteZtalii() {
         if (karty.isEmpty()) {
             uzupelnijTalie();
         }
@@ -47,15 +47,15 @@ public class Talia {
 
     private void wyswietlTalie() {
         int indeks = 1;
-        for (Karta karta : karty) {
-            System.out.println(indeks + ": " + karta);
+        for (Card card : karty) {
+            System.out.println(indeks + ": " + card);
             indeks++;
         }
     }
 
     public void uzupelnijTalie() {
         int rozmiarStosu = stos.size();
-        List<Karta> taliaDoTasowania = new ArrayList<>();
+        List<Card> taliaDoTasowania = new ArrayList<>();
         for (int i = 1; i < rozmiarStosu; i++) {
             taliaDoTasowania.add(stos.remove(i));
         }
@@ -63,7 +63,7 @@ public class Talia {
         wyswietlTalie();
     }
 
-    public List<Karta> getKarty() {
+    public List<Card> getKarty() {
         return karty;
     }
 }

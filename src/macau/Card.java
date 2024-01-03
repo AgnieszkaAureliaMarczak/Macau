@@ -1,10 +1,10 @@
 package macau;
 
-public class Karta {
+public class Card {
     private Kolor kolor;
     private Nominal nominal;
 
-    public Karta(Kolor kolor, Nominal nominal) {
+    public Card(Kolor kolor, Nominal nominal) {
         this.kolor = kolor;
         this.nominal = nominal;
     }

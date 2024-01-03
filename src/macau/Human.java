@@ -1,31 +1,31 @@
 package macau;
 
-public class Czlowiek extends Gracz {
+public class Human extends Player {
 
-    public Czlowiek(int indeks) {
-        super(indeks);
+    public Human(int index) {
+        super(index);
     }
 
-    public Karta wybierzKarte(Karta kartaZeStosu) {
-        wyswietlKarty();
-        Karta wybranaKarta = ustalKarte();
+    public Card selectCardToPlay(Card topCardOnDiscardPile) {
+        printPlayersCards();
+        Card wybranaKarta = ustalKarte();
         System.out.println();
         return wybranaKarta;
     }
 
-    private Karta ustalKarte() {
+    private Card ustalKarte() {
         boolean kartaWzakresie;
         int numerKarty;
         do {
             kartaWzakresie = true;
             System.out.println("Wpisz liczbę odpowiadającej karcie, którą chcesz wyłożyć.");
             numerKarty = FajniejszyScanner.pobierzLiczbe();
-            if (numerKarty < 1 || numerKarty > dajIloscKart()) {
+            if (numerKarty < 1 || numerKarty > getNumberOfCardsInHand()) {
                 System.out.println("Podana liczba wykracza poza zakres twoich kart.");
                 kartaWzakresie = false;
             }
         } while (!kartaWzakresie);
         numerKarty -= 1;
-        return karty.get(numerKarty);
+        return cards.get(numerKarty);
     }
 }
