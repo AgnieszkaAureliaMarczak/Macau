@@ -31,7 +31,7 @@ public class Gra {
         boolean wlasciwaLiczbaGraczy;
         do {
             System.out.println("Podaj liczbę graczy (od 2 do 6).");
-            liczbaGraczy = FajniejszyScanner.pobierzLiczbe();
+            liczbaGraczy = ReadingNumberFromConsole.readNumber();
             wlasciwaLiczbaGraczy = true;
             if (liczbaGraczy < 2 || liczbaGraczy > 6) {
                 System.out.println("Podana liczba graczy wykracza poza zakres 2-6.");

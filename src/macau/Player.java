@@ -31,11 +31,11 @@ public class Player {
     }
 
     public boolean canYouPlayCard(Card topCardOnDiscardPile) {
-        Card dopasowanaKarta = getMatchingCard(topCardOnDiscardPile);
-        return dopasowanaKarta != null;
+        Card cardToPlay = getCardToPlay(topCardOnDiscardPile);
+        return cardToPlay != null;
     }
 
-    Card getMatchingCard(Card topCardOnDiscardPile) {
+    Card getCardToPlay(Card topCardOnDiscardPile) {
         for (Card playersCard : cards) {
             if (playersCard.getKolor() == topCardOnDiscardPile.getKolor() ||
                     playersCard.getNumerycznaWartosc() == topCardOnDiscardPile.getNumerycznaWartosc()) {

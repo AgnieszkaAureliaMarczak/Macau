@@ -8,6 +8,6 @@ public class Komputer extends Player {
 
     @Override
     public Card selectCardToPlay(Card topCardOnDiscardPile) {
-        return getMatchingCard(topCardOnDiscardPile);
+        return getCardToPlay(topCardOnDiscardPile);
     }
 }

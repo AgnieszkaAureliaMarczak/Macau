@@ -8,24 +8,24 @@ public class Human extends Player {
 
     public Card selectCardToPlay(Card topCardOnDiscardPile) {
         printPlayersCards();
-        Card wybranaKarta = ustalKarte();
+        Card selectedCard = getCardToPlay();
         System.out.println();
-        return wybranaKarta;
+        return selectedCard;
     }
 
-    private Card ustalKarte() {
-        boolean kartaWzakresie;
-        int numerKarty;
+    private Card getCardToPlay() {
+        boolean correctCard;
+        int cardNumber;
         do {
-            kartaWzakresie = true;
+            correctCard = true;
             System.out.println("Wpisz liczbę odpowiadającej karcie, którą chcesz wyłożyć.");
-            numerKarty = FajniejszyScanner.pobierzLiczbe();
-            if (numerKarty < 1 || numerKarty > getNumberOfCardsInHand()) {
+            cardNumber = ReadingNumberFromConsole.readNumber();
+            if (cardNumber < 1 || cardNumber > getNumberOfCardsInHand()) {
                 System.out.println("Podana liczba wykracza poza zakres twoich kart.");
-                kartaWzakresie = false;
+                correctCard = false;
             }
-        } while (!kartaWzakresie);
-        numerKarty -= 1;
-        return cards.get(numerKarty);
+        } while (!correctCard);
+        cardNumber -= 1;
+        return cards.get(cardNumber);
     }
 }
