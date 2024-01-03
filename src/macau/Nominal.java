@@ -15,24 +15,17 @@ public enum Nominal {
     KROL(13, "Król"),
     AS(14, "As");
 
-    //pola - cechy
     private int numerycznaWartosc;
     private String wyswietlanaNazwa;
-    //konstruktory
 
     Nominal(int numerycznaWartosc, String wyswietlanaNazwa) {
         this.numerycznaWartosc = numerycznaWartosc;
         this.wyswietlanaNazwa = wyswietlanaNazwa;
     }
 
-    //metody
-   public int getNumerycznaWartosc() {
+    public int getNumerycznaWartosc() {
         return numerycznaWartosc;
     }
-
-   /* public int getNumerycznaWartosc() {
-        return ordinal()+2;
-    }*/
 
     @Override
     public String toString() {
