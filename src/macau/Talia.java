@@ -6,24 +6,23 @@ import java.util.Random;
 
 public class Talia {
     private List<Karta> karty = new ArrayList<>();
-
     private List<Karta> stos;
 
     public Talia(List<Karta> stos) {
         this.stos = stos;
     }
 
-    public List<Karta> przygotujKarty(){
+    public List<Karta> przygotujKarty() {
         potasujTalie(stworzTalieKart());
         return karty;
     }
+
     private ArrayList<Karta> stworzTalieKart() {
         ArrayList<Karta> talia = new ArrayList<>();
         Kolor[] tablicaKolorow = Kolor.values();
         Nominal[] tablicaNominalow = Nominal.values();
         for (Kolor kolor : tablicaKolorow) {
             for (Nominal nominal : tablicaNominalow) {
-                //    System.out.printf("%s %d\n",nominal,nominal.getNumerycznaWartosc());
                 talia.add(new Karta(kolor, nominal));
             }
         }
@@ -39,10 +38,9 @@ public class Talia {
         }
     }
 
-
     public Karta usunPierwszaKarteZtalii() {
         if (karty.isEmpty()) {
-             uzupelnijTalie();
+            uzupelnijTalie();
         }
         return karty.remove(0);
     }
