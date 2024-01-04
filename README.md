@@ -1,12 +1,12 @@
-#  :diamonds: :spades: :hearts: :clubs: Macau - interactive card game :diamonds: :spades: :hearts: :clubs:
+#  :diamonds: :spades: :hearts: :clubs: Macau - interactive card game :clubs: :hearts: :spades:  :diamonds:  
 An object-oriented console app that creates the experience of playing Macau.
 
 
 ## :black_joker: General Information
 
-Create multiple accomodation vouchers with various variables and save them into a TXT or PDF file, ready to print!  
+Play with up to five computer-simulated opponents and enjoy the thrill of the real-world game!
 
-*I created this app to practise object-oriented principles such as inheritance and interfaces.*
+*This is my first object-oriented console app. I created it to practise programming principles such as inheritance, composition and encapsulation.*
 
 ## :black_joker: Features
 :pencil2: Write unlimited number of coupons/vouchers   
