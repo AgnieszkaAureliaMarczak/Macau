@@ -1,9 +1,9 @@
 package macau;
 
-public class Komputer extends Player {
+public class Computer extends Player {
 
-    public Komputer(int indeks) {
-        super(indeks);
+    public Computer(int index) {
+        super(index);
     }
 
     @Override
