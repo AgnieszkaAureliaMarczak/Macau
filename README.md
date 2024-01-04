@@ -8,21 +8,15 @@ Play with up to five computer-simulated opponents and enjoy the thrill of the re
 
 *This is my first object-oriented console app. I created it to practise programming principles such as inheritance, composition and encapsulation.*
 
-## :black_joker: Features
-:pencil2: Write unlimited number of coupons/vouchers   
-:pencil2: Five voucher variables available: number or nights, number of people, room type, add-ons and validity  
-:pencil2: Edit written vouchers at any time  
-:pencil2: Create a TXT or PDF file with your vouchers  
-:pencil2: Ready to print! :computer:  
 
 ## :black_joker: How To Use
-:pencil2: Clone the repository using [Git](https://git-scm.com/), then run it on your computer  
-:pencil2: Pro-Tip: for best functionality use [the Oracle OpenJDK version 17](https://www.oracle.com/pl/java/technologies/downloads/#java17)  
-:pencil2: Set up Maven  
-:pencil2: Required dependency: [Apache PDFBox, version 3.0.1](https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox/3.0.1)  
-:pencil2: Run the programme from the main method  
+:diamonds:   Clone the repository using [Git](https://git-scm.com/), then run it on your computer  
+:diamonds:   Pro-Tip: for best functionality use [the Oracle OpenJDK version 17](https://www.oracle.com/pl/java/technologies/downloads/#java17)  
+:diamonds:   Run the programme from the main method  
 
 
 
+![Capture1](https://github.com/AgnieszkaAureliaMarczak/Macau/assets/139965402/2cec74d8-2bdc-49d7-b2e1-8c2cbca7d21d)
 
-:pencil2: Have fun!
+
+#         :diamonds: :spades: :hearts: :clubs: Have fun! :clubs: :hearts: :spades:  :diamonds:  
