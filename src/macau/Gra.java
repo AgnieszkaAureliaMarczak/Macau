@@ -6,7 +6,7 @@ import java.util.List;
 public class Gra {
     private List<Card> stos = new ArrayList<>();
     private List<Player> gracze = new ArrayList<>();
-    private Talia talia = new Talia(stos);
+    private Deck deck = new Deck(stos);
     private int liczbaGraczy;
 
     public void graj() {
@@ -17,7 +17,7 @@ public class Gra {
     private void przygotuj() {
         powitaj();
         ustalLiczbeGraczy();
-        talia.przygotujKarty();
+        deck.prepare();
         rozdajKarty();
         zapowiedzStartGry();
         przygotujPierwszaKarte();
@@ -48,13 +48,13 @@ public class Gra {
     public void rozdajKarty() {
         for (int i = 0; i < 5; i++) {
             for (Player player : gracze) {
-                player.receiveCard(talia.usunPierwszaKarteZtalii());
+                player.receiveCard(deck.removeFirstCard());
             }
         }
     }
 
     private void przygotujPierwszaKarte() {
-        Card odslonietaKarta = talia.usunPierwszaKarteZtalii();
+        Card odslonietaKarta = deck.removeFirstCard();
         dolozKarteDoStosu(odslonietaKarta);
     }
 
@@ -85,7 +85,7 @@ public class Gra {
                     wyswietlKomunikatJakaKartaNaStosie(odslonietaKarta);
                 }
                 if (!aktualny.canYouPlayCard(odslonietaKarta)) {
-                    Card otrzymana = talia.usunPierwszaKarteZtalii();
+                    Card otrzymana = deck.removeFirstCard();
                     aktualny.receiveCard(otrzymana);
                     System.out.println(aktualny + " nie mogl nic zagrac, dobiera kartę. Otrzymana karta to: " + otrzymana);
                     continue;
