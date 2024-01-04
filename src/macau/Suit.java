@@ -1,9 +1,9 @@
 package macau;
 
-public enum Kolor {
-    KARO, KIER, PIK, TREFL;
+public enum Suit {
+    DIAMOND, HEART, SPADE, CLUB;
 
-     Kolor() {
+     Suit() {
 
     }
 

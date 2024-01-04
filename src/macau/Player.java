@@ -37,8 +37,8 @@ public class Player {
 
     Card getCardToPlay(Card topCardOnDiscardPile) {
         for (Card playersCard : cards) {
-            if (playersCard.getKolor() == topCardOnDiscardPile.getKolor() ||
-                    playersCard.getNumerycznaWartosc() == topCardOnDiscardPile.getNumerycznaWartosc()) {
+            if (playersCard.getSuit() == topCardOnDiscardPile.getSuit() ||
+                    playersCard.getNumericValue() == topCardOnDiscardPile.getNumericValue()) {
                 return playersCard;
             }
         }

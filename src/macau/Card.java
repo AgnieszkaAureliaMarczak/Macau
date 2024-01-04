@@ -1,24 +1,24 @@
 package macau;
 
 public class Card {
-    private Kolor kolor;
-    private Nominal nominal;
+    private Suit suit;
+    private Rank rank;
 
-    public Card(Kolor kolor, Nominal nominal) {
-        this.kolor = kolor;
-        this.nominal = nominal;
+    public Card(Suit suit, Rank rank) {
+        this.suit = suit;
+        this.rank = rank;
     }
 
-    public int getNumerycznaWartosc() {
-        return nominal.getNumerycznaWartosc();
+    public int getNumericValue() {
+        return rank.getNumericValue();
     }
 
-    public Kolor getKolor() {
-        return kolor;
+    public Suit getSuit() {
+        return suit;
     }
 
     @Override
     public String toString() {
-        return kolor + ", " + nominal;
+        return suit + ", " + rank;
     }
 }

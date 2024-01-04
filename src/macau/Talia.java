@@ -19,11 +19,11 @@ public class Talia {
 
     private ArrayList<Card> stworzTalieKart() {
         ArrayList<Card> talia = new ArrayList<>();
-        Kolor[] tablicaKolorow = Kolor.values();
-        Nominal[] tablicaNominalow = Nominal.values();
-        for (Kolor kolor : tablicaKolorow) {
-            for (Nominal nominal : tablicaNominalow) {
-                talia.add(new Card(kolor, nominal));
+        Suit[] tablicaKolorow = Suit.values();
+        Rank[] tablicaNominalow = Rank.values();
+        for (Suit suit : tablicaKolorow) {
+            for (Rank rank : tablicaNominalow) {
+                talia.add(new Card(suit, rank));
             }
         }
         return talia;
