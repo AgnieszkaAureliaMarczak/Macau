@@ -69,8 +69,7 @@ public class Game {
 
     private void start() {
         Card lastPlayedCard = discardPile.get(0);
-        boolean gameEnd = false;
-        while (!gameEnd) {
+        while (true) {
             for (Player current : players) {
                 if (current.equals(getFirstPlayer())) {
                     displayMessageAboutLastPlayedCard(lastPlayedCard);
@@ -84,7 +83,7 @@ public class Game {
                 lastPlayedCard = playCard(current, lastPlayedCard);
                 checkIfMacau(current);
                 if (checkIfGameEnd(current)) {
-                    gameEnd = true;
+                    return;
                 }
             }
         }

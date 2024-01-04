@@ -1,13 +1,18 @@
 package macau;
 
 public enum Suit {
-    DIAMOND, HEART, SPADE, CLUB;
+    DIAMOND("Karo"),
+    HEART("Kier"),
+    SPADE("Trefl"),
+    CLUB("Pik");
 
-     Suit() {
+    private String displayedName;
 
+    Suit(String displayedName) {
+        this.displayedName = displayedName;
     }
 
     public String toString() {
-        return name().substring(0,1)+ name().substring(1).toLowerCase();
+        return displayedName;
     }
 }
