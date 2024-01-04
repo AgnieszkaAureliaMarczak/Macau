@@ -1,10 +1,10 @@
 package macau;
 
 public enum Suit {
-    DIAMOND("Karo"),
-    HEART("Kier"),
-    SPADE("Trefl"),
-    CLUB("Pik");
+    DIAMONDS("Karo"),
+    HEARTS("Kier"),
+    SPADES("Trefl"),
+    CLUBS("Pik");
 
     private String displayedName;
 
