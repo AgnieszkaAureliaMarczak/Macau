@@ -1,4 +1,4 @@
-#  :diamonds: :spades: :hearts: :clubs: Macau - interactive card game :clubs: :hearts: :spades:  :diamonds:  
+#  :diamonds: :spades: :hearts: :clubs: Macau - card game :clubs: :hearts: :spades:  :diamonds:  
 An object-oriented console app that creates the experience of playing Macau.
 
 
