@@ -9,9 +9,12 @@ Play with up to five computer-simulated opponents and enjoy the thrill of the re
 *This is my first object-oriented console app. I created it to practise programming principles such as inheritance, composition and encapsulation.*
 
 
-## :black_joker: How To Use
+## :black_joker: How To Use  
+
 :diamonds:   Clone the repository using [Git](https://git-scm.com/), then run it on your computer  
+
 :diamonds:   Pro-Tip: for best functionality use [the Oracle OpenJDK version 17](https://www.oracle.com/pl/java/technologies/downloads/#java17)  
+
 :diamonds:   Run the programme from the main method  
 
 
